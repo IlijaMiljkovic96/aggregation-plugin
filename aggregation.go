@@ -89,8 +89,6 @@ func (a *Aggregation) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 		response[key] = partialResponse
 	}
 
-	log.Println("Good to Go.")
-
 	rw.Header().Set("Content-Type", "application/json")
 
 	json.NewEncoder(rw).Encode(response)
